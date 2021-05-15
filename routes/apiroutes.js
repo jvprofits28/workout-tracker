@@ -1,7 +1,7 @@
-const router = require("express").router();
+const router = require("express").Router();
 const db = require("../models/workout");
 
-router.get("api/workouts", (req, res) => {
+router.get("/api/workouts", (req, res) => {
   db.find()
     .then((dbworkout) => {
       res.json(dbworkout);
@@ -12,8 +12,8 @@ router.get("api/workouts", (req, res) => {
 });
 router.get("/api/workouts/range", (req, res) => {
   db.find()
-    .then((dbData) => {
-      res.json(dbData);
+    .then((dbworkout) => {
+      res.json(dbworkout);
     })
     .catch((err) => {
       res.json(err);
